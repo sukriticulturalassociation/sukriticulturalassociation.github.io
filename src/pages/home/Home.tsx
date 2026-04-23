@@ -19,7 +19,7 @@ function Home() {
     <div className="home-page">
       <Navbar />
       <Carousel />
-      <HorizontalScroll>
+      <HorizontalScroll title="Our Esteemed Partners">
         <img
           src={bankOfBaroda}
           alt="Bank of Baroda"

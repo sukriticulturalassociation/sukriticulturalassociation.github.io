@@ -1,60 +1,31 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import "./HorizontalScroll.css";
 
 interface Props {
   children: React.ReactNode;
-  speed?: number;
+  title?: string | null;
 }
 
-const HorizontalScroll: React.FC<Props> = ({ children, speed = 0.5 }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number | null>(null);
-  const isPaused = useRef(false);
-
-  const autoScroll = () => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    if (!isPaused.current) {
-      container.scrollLeft += speed;
-
-      const maxScroll = container.scrollWidth / 2;
-
-      // 🔥 Seamless reset (no visible jump)
-      if (container.scrollLeft >= maxScroll) {
-        container.scrollLeft -= maxScroll;
-      }
-    }
-
-    animationRef.current = requestAnimationFrame(autoScroll);
-  };
-
+const HorizontalScroll: React.FC<Props> = ({ children, title }) => {
   useEffect(() => {
-    animationRef.current = requestAnimationFrame(autoScroll);
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
+    return () => {};
   }, []);
 
   return (
-    <div
-      className="carousel-container test-border"
-      onMouseEnter={() => (isPaused.current = true)}
-      onMouseLeave={() => (isPaused.current = false)}
-    >
-      <div className="group" ref={scrollRef}>
-        <div className="scroll-content">
-          {/* 🔁 Duplicate for infinite effect */}
-          {children}
+    <div className="carousel-container">
+      {title && (
+        <div className="title-container">
+          <h2 className="gradient-title">{title}</h2>
         </div>
-      </div>
-      <div aria-hidden className="group" ref={scrollRef}>
-        <div className="scroll-content">
-          {/* 🔁 Duplicate for infinite effect */}
-          {children}
+      )}
+      <div className="scroll-group">
+        <div className="group">
+          <div className="scroll-content">{children}</div>
+          <div className="scroll-content">{children}</div>
+        </div>
+        <div aria-hidden="true" className="group">
+          <div className="scroll-content">{children}</div>
+          <div className="scroll-content">{children}</div>
         </div>
       </div>
     </div>
