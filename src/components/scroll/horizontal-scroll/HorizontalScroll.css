@@ -1,0 +1,37 @@
+.carousel-container {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding-right: 1em;
+  animation: spin 20s linear infinite;
+}
+
+.scroll-content {
+  display: flex;
+  flex: 0 0 5em;
+  gap: 1em;
+  width: max-content;
+}
+
+/* .scroll-content > * {
+  flex: 0 0 auto;
+} */
+
+@keyframes spin {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

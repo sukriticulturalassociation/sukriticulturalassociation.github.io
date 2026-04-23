@@ -1,0 +1,130 @@
+/* Base Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 1000;
+
+  background: linear-gradient(to right, #b9a0a0, #2583e0, #7ef567);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 25px;
+}
+
+/* Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.site-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap; /* prevents line break */
+  overflow: hidden; /* hides overflow if too long */
+  text-overflow: ellipsis;
+}
+
+/* Center Menu */
+.navbar-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link::before {
+  content: ""; /* you can replace with icon later */
+  width: 30px;
+  height: 30px;
+  background-image: url("../../assets/sukriticulturalassociation_innercircle.png"); /* 👉 replace with your image path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #000;
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar-center {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .navbar-center.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .site-title {
+    font-size: 16px;
+  }
+}
