@@ -13,6 +13,7 @@ import relianceTrends from "../../assets/reliance_trends.jpg";
 import rplusNews from "../../assets/rplus_news.jpg";
 import sencoGoldAndDiamond from "../../assets/senco_gold_and_diamond.jpg";
 import tvs from "../../assets/tvs.png";
+import Footer from "../../components/footer/Footer";
 
 function Home() {
   return (
@@ -72,6 +73,7 @@ function Home() {
           style={{ minWidth: "200px", height: "120px" }}
         />
       </HorizontalScroll>
+      <Footer />
     </div>
   );
 }

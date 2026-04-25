@@ -5,7 +5,14 @@ import logo from "../../assets/sukriticulturalassociation.png";
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navItems = ["Home", "About", "Event Calendar", "Sponsors", "Contact"];
+  const navItems = [
+    "Home",
+    "Good Works",
+    "Event Calendar",
+    "Sponsors",
+    "Contact",
+    "About Us",
+  ];
 
   return (
     <nav className="navbar">

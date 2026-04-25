@@ -20,7 +20,7 @@
   justify-content: center;
   gap: 1em;
   padding-right: 1em;
-  animation: spin 20s linear infinite;
+  animation: scrollRightToLeft 20s linear infinite;
 }
 .scroll-group:hover .group {
   animation-play-state: paused;
@@ -52,7 +52,7 @@
   color: transparent;
 }
 
-@keyframes spin {
+@keyframes scrollRightToLeft {
   0% {
     transform: translateX(0);
   }
