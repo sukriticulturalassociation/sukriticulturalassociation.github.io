@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import qrCodeFacebook from "../../assets/qr-codes/qrcode_sukriti_facebook.png";
 import qrCodeInstagram from "../../assets/qr-codes/qrcode_sukriti_instagram.png";
 import qrCodeDonation from "../../assets/qr-codes/qrcode_sukriti_payment_federalbank.png";
 import qrCodeYoutube from "../../assets/qr-codes/qrcode_sukriti_youtube.png";
+
 import "./Footer.css";
 
 import { FaFacebookSquare, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import PhoneContact from "../contact/phone-contact/PhoneContact";
+import PopupModal from "../popup/popup-modal/PopupModal";
+import WhatsAppContact from "../contact/whatsapp-contact/WhatsAppContact";
 
 const Footer: React.FC = () => {
+  const [openPopupYoutubeQrCode, setPopupYoutubeQrCode] = useState(false);
+  const [openPopupFacebookQrCode, setPopupFacebookQrCode] = useState(false);
+  const [openPopupInstagramQrCode, setPopupInstagramQrCode] = useState(false);
+
   return (
     <footer className="footer">
       {/* First Row */}
@@ -36,7 +44,18 @@ const Footer: React.FC = () => {
             >
               @SukritiCulturalAssociation
             </a>
-            <img src={qrCodeYoutube} alt="YouTube QR" className="qr-small" />
+            <img
+              src={qrCodeYoutube}
+              alt="YouTube QR"
+              className="qr-small"
+              onClick={() => setPopupYoutubeQrCode(true)}
+            />
+            <PopupModal
+              isOpen={openPopupYoutubeQrCode}
+              onClose={() => setPopupYoutubeQrCode(false)}
+            >
+              <img src={qrCodeYoutube} alt="YouTube QR" className="qr" />
+            </PopupModal>
           </div>
           <div className="social-item">
             <FaFacebookSquare size={24} color="#3b5998" />
@@ -46,7 +65,18 @@ const Footer: React.FC = () => {
             >
               Sukriti Cultural Association
             </a>
-            <img src={qrCodeFacebook} alt="Facebook QR" className="qr-small" />
+            <img
+              src={qrCodeFacebook}
+              alt="Facebook QR"
+              className="qr-small"
+              onClick={() => setPopupFacebookQrCode(true)}
+            />
+            <PopupModal
+              isOpen={openPopupFacebookQrCode}
+              onClose={() => setPopupFacebookQrCode(false)}
+            >
+              <img src={qrCodeFacebook} alt="Facebook QR" className="qr" />
+            </PopupModal>
           </div>
           <div className="social-item">
             <FaInstagramSquare size={24} color="#E1306C" />
@@ -60,7 +90,14 @@ const Footer: React.FC = () => {
               src={qrCodeInstagram}
               alt="Instagram QR"
               className="qr-small"
+              onClick={() => setPopupInstagramQrCode(true)}
             />
+            <PopupModal
+              isOpen={openPopupInstagramQrCode}
+              onClose={() => setPopupInstagramQrCode(false)}
+            >
+              <img src={qrCodeInstagram} alt="Instagram QR" className="qr" />
+            </PopupModal>
           </div>
         </div>
 
@@ -74,14 +111,21 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Column 4 - Contact Form */}
-        <div className="footer-col contact-form">
+        <div className="footer-col">
           <h3>Contact Us</h3>
-          <form>
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Email" />
-            <textarea placeholder="Message"></textarea>
-            <button type="submit">Send</button>
-          </form>
+          <div className="contact-form">
+            <div>
+              <p>President: Sumanta</p>
+              <PhoneContact phone="+91 96200 97244" />
+              <WhatsAppContact phone="919620097244" />
+            </div>
+            <form>
+              <input type="text" placeholder="Your Name" />
+              <input type="email" placeholder="Email" />
+              <textarea placeholder="Message"></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
         </div>
       </div>
 

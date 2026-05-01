@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 import cover from "../../assets/Cover.png";
+import sukriti_poster_3d from "../../assets/sukriti_poster_3d_20260428.png";
+import sukriti_posterOriginal from "../../assets/sukriti_posterOriginal_20260428.png";
 
-const images = [cover];
+const images = [cover, sukriti_poster_3d, sukriti_posterOriginal];
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

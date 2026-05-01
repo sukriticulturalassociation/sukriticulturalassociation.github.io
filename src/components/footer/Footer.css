@@ -57,10 +57,18 @@
 }
 
 /* Contact Form */
+.contact-form {
+  display: flex;
+  gap: 10px;
+}
 .contact-form form {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 8px;
+}
+.contact-form div p {
+  flex-direction: column;
 }
 
 .contact-form input,

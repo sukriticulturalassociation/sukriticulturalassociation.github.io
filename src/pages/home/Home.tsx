@@ -1,7 +1,3 @@
-import Carousel from "../../components/carousel/Carousel";
-import Navbar from "../../components/navbar-top/Navbar";
-import HorizontalScroll from "../../components/scroll/horizontal-scroll/HorizontalScroll";
-import "./Home.css";
 import bankOfBaroda from "../../assets/bank-of-baroda.png";
 import dominosPizza from "../../assets/domino-s-pizza.jpg";
 import godrejProperties from "../../assets/godrej_properties.jpg";
@@ -12,14 +8,20 @@ import orraFineJewellery from "../../assets/orra_fine_jewellery.png";
 import relianceTrends from "../../assets/reliance_trends.jpg";
 import rplusNews from "../../assets/rplus_news.jpg";
 import sencoGoldAndDiamond from "../../assets/senco_gold_and_diamond.jpg";
+import sukritiPoster3d from "../../assets/sukriti_poster_3d_20260428.png";
+import sukritiPosterOriginal from "../../assets/sukriti_posterOriginal_20260428.png";
 import tvs from "../../assets/tvs.png";
+import CarouselV2 from "../../components/carousel/CarouselV2";
 import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/navbar-top/Navbar";
+import HorizontalScroll from "../../components/scroll/horizontal-scroll/HorizontalScroll";
+import "./Home.css";
 
 function Home() {
   return (
     <div className="home-page">
       <Navbar />
-      <Carousel />
+      <CarouselV2 images={[sukritiPoster3d, sukritiPosterOriginal]} />
       <HorizontalScroll title="Our Esteemed Partners">
         <img
           src={bankOfBaroda}

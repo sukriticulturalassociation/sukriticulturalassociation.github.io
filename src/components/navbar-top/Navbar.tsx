@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
           {navItems.map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase().replace(" ", "")}`}
+              href={`${item.toLowerCase().replace(" ", "-")}`}
               className="nav-link"
               onClick={() => setMenuOpen(false)}
             >
