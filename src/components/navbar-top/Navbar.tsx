@@ -7,9 +7,10 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     "Home",
-    "Good Works",
     "Event Calendar",
+    "Durga Puja 2025",
     "Sponsors",
+    "Good Works",
     "Contact",
     "About Us",
   ];

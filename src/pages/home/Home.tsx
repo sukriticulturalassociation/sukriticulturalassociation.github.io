@@ -12,15 +12,12 @@ import sukritiPoster3d from "../../assets/sukriti_poster_3d_20260428.png";
 import sukritiPosterOriginal from "../../assets/sukriti_posterOriginal_20260428.png";
 import tvs from "../../assets/tvs.png";
 import CarouselV2 from "../../components/carousel/CarouselV2";
-import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar-top/Navbar";
 import HorizontalScroll from "../../components/scroll/horizontal-scroll/HorizontalScroll";
 import "./Home.css";
 
 function Home() {
   return (
     <div className="home-page">
-      <Navbar />
       <CarouselV2 images={[sukritiPoster3d, sukritiPosterOriginal]} />
       <HorizontalScroll title="Our Esteemed Partners">
         <img
@@ -75,7 +72,6 @@ function Home() {
           style={{ minWidth: "200px", height: "120px" }}
         />
       </HorizontalScroll>
-      <Footer />
     </div>
   );
 }
