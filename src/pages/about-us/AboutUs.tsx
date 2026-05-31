@@ -1,5 +1,6 @@
 import React from "react";
 import "./AboutUs.css";
+import BulletListV1 from "../../components/bullet-list-v1/BulletListV1";
 
 const AboutUs: React.FC = () => {
   return (
@@ -33,17 +34,17 @@ const AboutUs: React.FC = () => {
         <div className="team-grid">
           <div className="team-card">
             <h3>President</h3>
-            <p>Member Name</p>
+            <p>Sumanta</p>
           </div>
 
           <div className="team-card">
             <h3>Secretary</h3>
-            <p>Member Name</p>
+            <p>Partha</p>
           </div>
 
           <div className="team-card">
             <h3>Treasurer</h3>
-            <p>Member Name</p>
+            <p>Indranil</p>
           </div>
 
           <div className="team-card">
@@ -62,12 +63,14 @@ const AboutUs: React.FC = () => {
           benefits:
         </p>
 
-        <ul>
-          <li>Participation in all cultural events</li>
-          <li>Special access to community gatherings</li>
-          <li>Networking opportunities</li>
-          <li>Contribution to social activities</li>
-        </ul>
+        <BulletListV1
+          items={[
+            { text: "Participation in all cultural events" },
+            { text: "Special access to community gatherings" },
+            { text: "Networking opportunities" },
+            { text: "Contribution to social activities" },
+          ]}
+        />
 
         <h3>How to Join?</h3>
         <p>

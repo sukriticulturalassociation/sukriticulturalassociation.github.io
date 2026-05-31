@@ -2,3 +2,149 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Layout */
+.hero {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* LEFT */
+.hero-left {
+  flex: 1;
+  padding: 80px 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #f5f1ea;
+}
+
+.tagline {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #c27b4f;
+  margin-bottom: 10px;
+}
+
+.hero-left h1 {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2b2b2b;
+}
+
+.hero-left h1 span {
+  color: #a94442;
+  font-style: italic;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  max-width: 400px;
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.primary-btn {
+  background: #8b1e1e;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: none;
+  color: #8b1e1e;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.hero-right {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #8b1e1e, #d48a1f);
+  position: relative;
+}
+
+/* Optional subtle pattern overlay */
+.hero-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+  opacity: 0.2;
+}
+
+/* Image center */
+.image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.image-wrapper img {
+  max-width: 70%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-left {
+    padding: 40px 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  .hero-right {
+    height: 300px;
+  }
+
+  .image-wrapper img {
+    max-width: 60%;
+  }
+}
+
+/* ========================= */
+/* 💻 TABLET */
+/* ========================= */
+@media (max-width: 1200px) {
+  .hero-left h1 {
+    font-size: 44px;
+  }
+
+  .hero-left {
+    padding: 60px 40px;
+  }
+}

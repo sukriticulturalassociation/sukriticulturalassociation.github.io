@@ -5,6 +5,7 @@ import hdfcBank from "../../assets/hdfc-bank.png";
 import hindustanPetroleum from "../../assets/hindustan_petroleum.png";
 import manipalHospitals from "../../assets/manipal_hospitals.png";
 import orraFineJewellery from "../../assets/orra_fine_jewellery.png";
+import promotionPoster from "../../assets/promotion_poster.jpeg";
 import relianceTrends from "../../assets/reliance_trends.jpg";
 import rplusNews from "../../assets/rplus_news.jpg";
 import sencoGoldAndDiamond from "../../assets/senco_gold_and_diamond.jpg";
@@ -18,6 +19,36 @@ import "./Home.css";
 function Home() {
   return (
     <div className="home-page">
+      <section className="hero">
+        {/* LEFT CONTENT */}
+        <div className="hero-left">
+          <p className="tagline">EST. WITH LOVE FOR CULTURE</p>
+
+          <h1>
+            Celebrating <span>Heritage</span>, <br />
+            Nurturing <br />
+            Community
+          </h1>
+
+          <p className="description">
+            Sukriti Cultural Association is a vibrant community dedicated to
+            preserving, celebrating, and sharing the richness of our cultural
+            traditions through art, music, dance, and festivals.
+          </p>
+
+          <div className="hero-buttons">
+            <button className="primary-btn">Become a Member</button>
+            <button className="secondary-btn">Explore Activities</button>
+          </div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="hero-right">
+          <div className="image-wrapper">
+            <img src={promotionPoster} alt="Sukriti" />
+          </div>
+        </div>
+      </section>
       <CarouselV2 images={[sukritiPoster3d, sukritiPosterOriginal]} />
       <HorizontalScroll title="Our Esteemed Partners">
         <img

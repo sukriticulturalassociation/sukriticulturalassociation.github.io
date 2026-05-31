@@ -30,7 +30,7 @@ const CarouselV2: React.FC<Props> = ({ images, interval = 4000 }) => {
   }, [index, interval]);
 
   return (
-    <div className="hero-carousel">
+    <div className="carousel-v2">
       {/* Background layers */}
       <div
         className="carousel-bg prev"

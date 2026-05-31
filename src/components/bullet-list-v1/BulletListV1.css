@@ -1,0 +1,64 @@
+.custom-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Item */
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.bullet-item:hover {
+  background: rgba(139, 30, 30, 0.08);
+  transform: translateX(6px);
+}
+
+/* Icon */
+.bullet-icon img {
+  width: 50px;
+  height: 50px;
+
+  object-fit: scale-down;
+
+  border-radius: 8px;
+  border: 2px solid rgba(139, 30, 30, 0.2);
+
+  transition: 0.3s ease;
+}
+
+/* Text */
+.bullet-text {
+  font-size: 16px;
+  color: #2b2b2b;
+  flex: 1;
+}
+
+/* Hover Hand */
+.hover-hand {
+  opacity: 0;
+  transform: translateX(-10px);
+
+  transition: all 0.3s ease;
+
+  font-size: 20px;
+  color: #8b1e1e;
+}
+
+/* Show on hover */
+.bullet-item:hover .hover-hand {
+  opacity: 1;
+  transform: translateX(0);
+}
